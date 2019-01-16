@@ -58,9 +58,12 @@ for nc=1:nCells
         xlabel('# epochs');ylabel('Ihold')
         
     end
-    set([ah_charge ah_Ihold],'fontsize',14)
-    legend(ah_charge, str_legend,'location','best')
-    title(ah_charge, cname)
+    axis(ah_charge)
+    legend(str_legend,'location','best')
+    set(gca,'fontsize',14)
+    title(cname)
+    axis(ah_Ihold)
+    legend(str_legend,'location','best')
 end
 
 

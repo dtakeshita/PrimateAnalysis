@@ -1,4 +1,4 @@
-function  [stimData,time, stimOnset, stimOffset] = getStimuliData(elements)
+function  [stimData,time, stimOnset, stimOffset, sampleRate] = getStimuliData(elements)
     if nargin == 0
         %close; 
         clear;
