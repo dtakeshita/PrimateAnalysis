@@ -38,6 +38,7 @@ for nc=1:nCells
         dat = getData(elements);
         [~,t,stimOn, stimOff] = getStimuliData(elements);
         %% to-do: plot responses as a function of epochs
+        %calcCharge(elements);
         %% to-do: plot holding current
         
         %% plot responses
