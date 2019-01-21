@@ -23,6 +23,6 @@ function  charge = calcCharge(elements,Twindow)
     dataPost = cellfun(@(d,i)d(i),dat,postIdx,'unif',0);
     dataPostSubt = cellfun(@(d,b)d-b,dataPost,baseLine,'unif',0);
     dt = 1/sampleRate;
-    charge = cellfun(@(d)sum(d*dt),dataPostSubt)
+    charge = cellfun(@(d)sum(d*dt),dataPostSubt);
    
 end

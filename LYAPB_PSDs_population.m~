@@ -82,8 +82,8 @@ for nc=1:nCells
 %         set(gca,'xscale','log','yscale','log')
     end
     % change figure size
-    set(gcf,'PaperUnits','centimeters')
-    set(gcf,'PaperPosition',[0 0 15 25])
+    pos = [400 -100 600 700];
+    set(gcf,'position',pos)
     %% add legend
     legend(ah_welch, str_legend)
     set([ah_welch ah_fft],'fontsize',18)
@@ -94,7 +94,7 @@ for nc=1:nCells
     % save figure
     sname = sprintf('PSD_LYAPB_%s',cname);
     saveas(h, fullfile(save_path,sname),'fig');
-    saveas(h, fullfile(save_path,sname),'png');
+    saveas(h, fullfile(save_path,sname),'eps');
     
 end
 
