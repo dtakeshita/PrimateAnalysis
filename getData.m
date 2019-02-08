@@ -10,7 +10,7 @@ function  dat = getData(elements,varargin)
         dat = load(fullfile(dat_path,fname));
         elements = dat.elements;
         st = 1;
-        ed = 40000;
+        %ed = 40000;
     end
     st = 1;
     if nargin >= 2
@@ -20,13 +20,8 @@ function  dat = getData(elements,varargin)
         ed = varargin{2};
     end
     dat = cellfun(@(e)e.responses.Amp_1.data,elements,'unif',0);
-    if exist('ed','var');
-        dat = cellfun(@(d)d(st:ed),dat,'unif',0);
+    if ~exist('ed','var');
+        ed = unique(cellfun(@length, dat));
     end
-    if nargin == 0
-        figure;
-        X = 1:length(M);
-        [AX,H1,H2] = plotyy(X,M,X,V);
-        title(fname,'interpreter','none')
-    end
+    dat = cellfun(@(d)d(st:ed),dat,'unif',0);
 end
